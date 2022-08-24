@@ -24,8 +24,6 @@ ST_accountsDB_t accountsDB[255] = {
     {12500, "832764873264987632"}
 };
 
-f32 acc_num=0.0;
-
 uint16_t counter = 0;
 
 EN_transState_t recieveTransactionData(ST_transaction_t *transData)
