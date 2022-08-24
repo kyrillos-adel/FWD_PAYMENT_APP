@@ -47,7 +47,6 @@ EN_transState_t recieveTransactionData(ST_transaction_t *transData)
         if(saveTransaction(&transData) == OK_serv)
         {
             status = APPROVED;
-            printf("%f", transData->terminalData.transAmount);
             accountsDB[counter].balance -= transData->terminalData.transAmount;
 		    printf("transaction done successfully :)\n");
             printf("New balance: %f\n", accountsDB[counter].balance);
