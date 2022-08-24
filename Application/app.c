@@ -78,11 +78,11 @@ void appStart(void)
                 break;
 
             case DECLINED_INSUFFECIENT_FUND:
-                printf("Declined, invalid account\n");
+                printf("Declined, insufficient funds\n");
                 break;
 
             case INTERNAL_SERVER_ERROR:
-                printf("Declined, insufficient funds\n");
+                printf("Declined, Internal server error\n");
                 break;
         
             case APPROVED:
