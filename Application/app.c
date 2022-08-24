@@ -18,7 +18,7 @@
 
 void appStart(void)
 {
-    uint8_t repeat = 'e';
+    uint8_t repeat = 'q';
     // uint8_t end = 'c';
     // ST_cardData_t card_data;
 	// ST_terminalData_t term_data;
@@ -54,19 +54,19 @@ void appStart(void)
     	if(isCardExpired(trans_data.cardHolderData, trans_data.terminalData) == EXPIRED_CARD)
     	{
     		printf("Declined, expired Card!\n");
-    		break;
+    		continue;
     	}
 
     	if(getTransactionAmount(&trans_data.terminalData) == INVALID_AMOUNT)
     	{
     		printf("Invalid amount!\n");
-    		break;
+    		continue;
     	}
 
     	if(isBelowMaxAmount(&trans_data.terminalData) == EXCEED_MAX_AMOUNT)
     	{
     		printf("Declined, amount exceeding limit!\n");
-    		break;
+    		continue;
     	}
 
         trans_status = recieveTransactionData(&trans_data);
